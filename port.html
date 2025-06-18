@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Aum eiei</title> 
+    <meta charset="UTF-8"> /* กำหนดการเข้ารหัสตัวอักษร */
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> /* กำหนดการแสดงผลบนอุปกรณ์มือถือ */
+    <title>Aum eiei</title> /
     <!-- เพิ่ม Font Awesome CDN สำหรับไอคอน -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding-top: 50px; /* เว้นพื้นที่ด้านบนสำหรับ navigation bar ที่ตรึงอยู่ */
-            background-color: #f8cc08; /* สีพื้นหลังหลัก */
+            background-color: #aad6e7; /* สีพื้นหลังหลัก */
             color: #ffc813;
         }
         nav {
@@ -68,17 +68,14 @@
         .section-content-box {
             background-color: rgba(63, 56, 56, 0.87);
             border-radius: 8px;
-            /* ลบบรรทัด box-shadow ออกจากที่นี่ */
             max-width: 800px; /* กำหนดความกว้างสูงสุดของเนื้อหา */
             width: 100%; /* ให้ content box ใช้ความกว้างเต็มที่ของ max-width */
             padding: 40px;
             box-sizing: border-box;
-            transition: transform 0.3s ease-in-out; /* Smooth transition for section content box hover, ลบ box-shadow ออกจาก transition */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for section content box hover */
         }
         .section-content-box:hover {
             transform: translateY(-5px); /* ขยับขึ้นเล็กน้อยเมื่อโฮเวอร์ */
-            /* ลบบรรทัด box-shadow ออก */ 
-        }
 
         h2 {
             color: #ffe44e; /* สีเหลืองสำหรับหัวข้อหลัก */
@@ -137,7 +134,6 @@
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 15px;
-            /* ลบบรรทัด box-shadow ออกจากที่นี่ */
             text-align: left; /* จัดเนื้อหาใน item ชิดซ้าย */
         }
         .experience-item h4 {
@@ -145,13 +141,13 @@
             margin-bottom: 5px;
         }
 
-        /* เพิ่มสไตล์สำหรับเนื้อหาใน experience-item */
+         /* เพิ่มสไตล์สำหรับเนื้อหาใน experience-item */
         .experience-item p,
         .experience-item ul li {
             color: #050505; /* เปลี่ยนสีข้อความในประสบการณ์เป็นสีเทาอ่อนลง */
         }
 
-        /* เพิ่มสไตล์สำหรับเนื้อหาใน skill-category */
+     /* เพิ่มสไตล์สำหรับเนื้อหาใน skill-category */
         .skill-category ul li {
             color: #666; /* เปลี่ยนสีข้อความในทักษะเป็นสีเทาอ่อนลง */
         }
@@ -180,7 +176,7 @@
 </head>
 <body>
     <nav>
-        <a href="index-simple.html">Home</a>  
+        <a href="index-simple.html">Home</a>  /* ลิงก์ไปยังหน้าแรก */
         <div>
             <a href="#about">About me</a>
             <a href="#experience-skills">Experience-skills</a>
@@ -216,14 +212,6 @@
                         <li>ความรับผิดชอบและผลงานที่ 3</li>
                     </ul>
                 </div>
-                <div class="experience-item">
-                    <h4>ตำแหน่งงาน 2 ที่บริษัท B</h4>
-                    <p>เดือน ปี - เดือน ปี</p>
-                    <ul>
-                        <li>ความรับผิดชอบและผลงานที่ 1</li>
-                        <li>ความรับผิดชอบและผลงานที่ 2</li>
-                    </ul>
-                </div>
             </div>
 
             <h3>Skills</h3>
@@ -240,12 +228,6 @@
                     <ul>
                         <li>Git, Docker</li>
                         <li>CI/CD, Jira</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>ภาษา</h4>
-                    <ul>
-                        <li>ไทย, อังกฤษ</li>
                     </ul>
                 </div>
             </div>
