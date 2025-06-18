@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kanticha Yongcha - Professional Resume</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            color: #333;
+            padding-top: 64px; /* Space for fixed navigation bar */
+        }
+        /* Custom styles for sections for better visual separation */
+        section {
+            padding: 6rem 1rem; /* More vertical padding for sections */
+            min-height: calc(100vh - 64px); /* Ensure sections take at least full viewport height minus nav */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #about {
+            background-color: #ffffff;
+            color: #1a202c;
+        }
+        #experience-skills {
+            background-color: #e2e8f0; /* Slightly darker background */
+        }
+        #contact {
+            background-color: #2d3748; /* Dark background for contact section */
+            color: #ffffff;
+        }
+        .nav-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="relative">
+
+    <!-- Fixed Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-gray-800 text-white p-4 shadow-lg z-50">
+        <div class="container mx-auto flex justify-between items-center flex-wrap">
+            <a href="#" class="text-2xl font-bold rounded-md py-1 px-2 hover:bg-gray-700 transition-colors">Kanticha Yongcha</a>
+            <div class="flex flex-wrap gap-x-6 gap-y-2 text-lg">
+                <a href="#about" class="nav-link text-white hover:text-indigo-300 transition-all duration-200">About Me</a>
+                <a href="#experience-skills" class="nav-link text-white hover:text-indigo-300 transition-all duration-200">Experience & Skills</a>
+                <a href="#contact" class="nav-link text-white hover:text-indigo-300 transition-all duration-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: About Me -->
+    <section id="about" class="text-center">
+        <div class="container mx-auto px-4 py-8 max-w-4xl">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                <img src=" ใส่ลิ้งรูปของตัวเอง " alt="Your Photo" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-md border-4 border-indigo-400">
+                <div>
+                    <h2 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-2">kanticha Yongcha</h2>
+                    <p class="text-2xl md:text-3xl text-indigo-700 font-semibold mb-4">นางสาวกันติชา ย๋องชา</p>
+                    <p class="text-lg text-gray-700 leading-relaxed max-w-prose mx-auto">
+                       อธิบายตัวเองสั้นๆ ว่าคุณเป็นใคร คุณทำอะไร และคุณมีความสนใจในด้านไหนบ้าง เช่น "ฉันเป็นนักพัฒนาซอฟต์แวร์ที่หลงใหลในการสร้างแอปพลิเคชันที่ใช้งานง่ายและมีประสิทธิภาพ ฉันชอบเรียนรู้เทคโนโลยีใหม่ๆ และพัฒนาทักษะของตัวเองอยู่เสมอ"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: P Experiences & Skills -->
+    <section id="experience $ skills " class="text-center">
+        <div class="container mx-auto px-4 py-8 max-w-4xl">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-10"> Experience $ skills  </h2>
+
+                <!-- Professional Experience -->
+                <div class="mb-12 text-left">
+                    <h3 class="text-3xl md:text-4xl font-bold text-indigo-800 mb-6 border-b-2 border-indigo-300 pb-2">Professional Experience</h3>
+                    <div class="space-y-8">
+                        <!-- Experience Item 1 -->
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <h4 class="text-2xl font-semibold text-gray-800">Senior Software Engineer</h4>
+                            <p class="text-xl text-gray-600 mb-2">Tech Solutions Inc. | Jan 2020 - Present</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
+                                <li>Led the development of a new microservices architecture, improving system scalability by 50%.</li>
+                                <li>Mentored junior developers and conducted code reviews to ensure high code quality.</li>
+                                <li>Implemented CI/CD pipelines, reducing deployment time by 30%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="text-left">
+                    <h3 class="text-3xl md:text-4xl font-bold text-indigo-800 mb-6 border-b-2 border-indigo-300 pb-2">Skills</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Programming Languages</h4>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li>JavaScript (ES6+)</li>
+                                <li>Python</li>
+                                <li>Java</li>
+                                <li>TypeScript</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Frameworks & Libraries</h4>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li>React.js, Next.js</li>
+                                <li>Node.js, Express.js</li>
+                                <li>Spring Boot</li>
+                                <li>Tailwind CSS, Bootstrap</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                            <h4 class="text-xl font-semibold text-gray-800 mb-3">Databases & Tools</h4>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li>PostgreSQL, MongoDB</li>
+                                <li>Git, Docker, Kubernetes</li>
+                                <li>AWS, Google Cloud</li>
+                                <li>Jira, Confluence</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Contact -->
+    <section id="contact" class="text-center">
+        <div class="container mx-auto px-4 py-8 max-w-3xl">
+            <div class="bg-gray-700 rounded-2xl shadow-xl p-8 md:p-12 text-white">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-10">Get in Touch!</h2>
+                <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                    I'm always open to new opportunities and collaborations. Feel free to reach out to me via any of the platforms below.
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-6">
+                    <a href="mailto:john.doe@example.com" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                        <i class="fas fa-envelope text-xl"></i> Email Me
+                    </a>
+                    <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener noreferrer" class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-4 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                        <i class="fab fa-linkedin text-xl"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer" class="bg-gray-900 hover:bg-black text-white font-semibold py-4 px-6 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                        <i class="fab fa-github text-xl"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white text-center p-4 text-sm">
+        <p>&copy; 2025 kanticha Yongcha. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
