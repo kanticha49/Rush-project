@@ -4,95 +4,76 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Aum eiei</title> 
-    <!-- เพิ่ม Font Awesome CDN สำหรับไอคอน -->
+    <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding-top: 50px; /* เว้นพื้นที่ด้านบนสำหรับ navigation bar ที่ตรึงอยู่ */
-            background-color: #aad6e7; /* สีพื้นหลังหลัก */
+            background-color: #aad6e7;
             color: #ffc813;
         }
         nav {
-            position: fixed; /* ตรึง navigation bar ที่ด้านบน */
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333; /* สีพื้นหลังของ navigation bar */
-            color: white;
-            padding: 10px 20px; 
-            text-align: right;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             display: flex;
-            justify-content: space-between; /* จัด Home link ไปทางซ้าย */
+            justify-content: space-between;
             align-items: center;
-            z-index: 100; /* ให้ nav bar อยู่ด้านบนสุด */
+            background: #222;
+            padding: 16px;
         }
         nav a {
-            color: white; /* สีของลิงก์ใน navigation bar */
+            color: #fff;
             text-decoration: none;
-            padding: 5px 10px; 
-            margin-left: 15px; 
-            border-radius: 3px; 
-            transition: background-color 0.3s ease-in-out; /* การเปลี่ยนสีพื้นหลังอย่างนุ่มนวลเมื่อโฮเวอร์ */
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 10px;
         }
-        nav a:hover {
-            background-color: #555; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+        nav .nav-links {
+            display: flex;
+            gap: 24px;
         }
         section {
-            /* ทำให้แต่ละส่วนเป็นเหมือน "หน้า" เต็มจอ */
-            min-height: calc(100vh - 50px); /* ความสูงขั้นต่ำเท่ากับ viewport ลบความสูงของ nav bar */
-            display: flex; /* ใช้ flexbox เพื่อจัดเนื้อหาให้กึ่งกลางแนวตั้ง */
+            min-height: calc(100vh - 50px);
+            display: flex;
             flex-direction: column;
-            justify-content: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
-            align-items: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวนอน (ภายใน section) */
-            padding: 40px 20px; /* เพิ่ม padding */
-            box-sizing: border-box; /* รวม padding ในความสูง/กว้าง */
-            transition: background-color 0.5s ease-in-out; /* เพิ่ม transition สำหรับสีพื้นหลัง section */
-            text-align: center; /* จัดข้อความกึ่งกลางสำหรับ section โดยรวม */
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            transition: background-color 0.5s ease-in-out;
+            text-align: center;
         }
-
-        /* กำหนดสีพื้นหลังเฉพาะสำหรับแต่ละ section */
         #about {
-            background-color: #e9ac28da; 
+            background-color: #e9ac28da;
         }
         #experience-skills {
-            background-color: #f7c41e; 
+            background-color: #f7c41e;
         }
         #contact {
-            background-color: #fabc11ef; 
+            background-color: #fabc11ef;
         }
-
-        /* กล่องเนื้อหาหลักภายในแต่ละ section */
         .section-content-box {
             background-color: rgba(63, 56, 56, 0.87);
             border-radius: 8px;
-            max-width: 800px; /* กำหนดความกว้างสูงสุดของเนื้อหา */
-            width: 100%; /* ให้ content box ใช้ความกว้างเต็มที่ของ max-width */
+            max-width: 800px;
+            width: 100%;
             padding: 40px;
             box-sizing: border-box;
-            /* ลบบรรทัด transition: transform 0.3s ease-in-out; ออก */
         }
-        .section-content-box:hover {
-            /* ลบบรรทัด transform: translateY(-5px); ออก */ 
-        }
-
         h2 {
-            color: #ffe44e; /* สีเหลืองสำหรับหัวข้อหลัก */
-            border-bottom: 2px solid #f7e75f;  /* เส้นใต้สีเหลือง */
+            color: #ffe44e;
+            border-bottom: 2px solid #f7e75f;
             padding-bottom: 5px;
             margin-bottom: 20px;
         }
         h3 {
             color: #fdce4c;
-            text-align: left; /* จัดหัวข้อย่อยชิดซ้าย */ 
-            margin-top: 25px; /* เพิ่มระยะห่างด้านบน */
+            text-align: left;
+            margin-top: 25px;
         }
         ul {
             list-style: disc;
             margin-left: 20px;
-            text-align: left; /* จัดรายการลิสต์ชิดซ้าย */
+            text-align: left;
         }
         li {
             margin-bottom: 5px;
@@ -106,65 +87,64 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            border: 3px solid #fad21f; /* เพิ่มกรอบสีฟ้า */
+            border: 3px solid #fad21f;
         }
         .contact-link {
-            display: inline-flex; /* ใช้ flex เพื่อจัดเรียงไอคอนและข้อความในแนวนอน */
-            align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+            display: inline-flex;
+            align-items: center;
             padding: 8px 15px;
             margin: 5px;
             background-color: #fdc731;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            /* ลบบรรทัด transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; ออก */
         }
         .contact-link i {
-            margin-right: 8px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+            margin-right: 8px;
         }
         .contact-link:hover {
-            background-color: #ffe925; /* สีพื้นหลังเข้มขึ้นเมื่อโฮเวอร์ */
-            /* ลบบรรทัด transform: translateY(-3px); ออก */ 
+            background-color: #ffe925;
         }
         .text-content {
             text-align: center;
-            margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างสำหรับข้อความทั่วไป */
+            margin-bottom: 20px;
         }
         .experience-item, .skill-category {
-            background-color: #f9f9f9; /* สีพื้นหลังอ่อนกว่าสำหรับแต่ละรายการ */
+            background-color: #f9f9f9;
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 15px;
-            text-align: left; /* จัดเนื้อหาใน item ชิดซ้าย */
+            text-align: left;
         }
         .experience-item h4 {
             color: #1115ff;
             margin-bottom: 5px;
         }
-
-        /* เพิ่มสไตล์สำหรับเนื้อหาใน experience-item */
         .experience-item p,
         .experience-item ul li {
-            color: #050505; /* เปลี่ยนสีข้อความในประสบการณ์เป็นสีเทาอ่อนลง */
+            color: #050505;
         }
-
-        /* เพิ่มสไตล์สำหรับเนื้อหาใน skill-category */
         .skill-category ul li {
-            color: #666; /* เปลี่ยนสีข้อความในทักษะเป็นสีเทาอ่อนลง */
+            color: #666;
         }
         .skill-category h4 {
             color: #001aff;
             margin-bottom: 10px;
         }
-
-        /* Responsive adjustments */
+        .skill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
         @media (max-width: 768px) {
             nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav .nav-links {
                 justify-content: center;
                 flex-wrap: wrap;
-            }
-            nav a {
-                margin: 5px 10px;
+                gap: 12px;
             }
             section {
                 padding: 20px 10px;
@@ -172,36 +152,36 @@
             .section-content-box {
                 padding: 20px;
             }
+            .skill-grid {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index-simple.html">Home</a> 
-        <div>
+        <a href="index-simple.html">Home</a>
+        <div class="nav-links">
             <a href="#about">About me</a>
             <a href="#experience-skills">Experience-skills</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
-
     <section id="about">
         <div class="section-content-box">
-            <h2 class="text-center">About me</h2>
-            <img src="https://placehold.co/150x150/ADD8E6/000000?text=Your+Photo" alt="Your Photo" class="profile-photo">
-            <h1 class="text-center">Kanticha Yongcha</h1>
-            <p class="text-center">นางสาวกันติชา ย๋องชา</p>
+            <h2>About me</h2>
+            <img src="https://placehold.co/150x150/ADD8E6/000000?text=Your+Photo" alt="Profile photo" class="profile-photo">
+            <h1>Kanticha Yongcha</h1>
+            <p>นางสาวกันติชา ย๋องชา</p>
             <p class="text-content">
-                นี่คือคำอธิบายสั้นๆ เกี่ยวกับตัวคุณและสิ่งที่คุณทำ.
-                เน้นถึงความสามารถหลักและเป้าหมายในอาชีพของคุณ.
+                ชื่อเล่นว่าอุ๋ม เกิดวันที่ 08/02/2549 อายุ 19 ปี<br>
+                ปัจจุบันศึกษาอยู่คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี สาขาเทคโนโลยีคอมพิวเตอร์
             </p>
         </div>
     </section>
-
     <section id="experience-skills">
         <div class="section-content-box">
-            <h2 class="text-center">Experience-skills</h2>
-
+            <h2>Experience-skills</h2>
             <h3>Experience</h3>
             <div class="experience-list">
                 <div class="experience-item">
@@ -222,7 +202,6 @@
                     </ul>
                 </div>
             </div>
-
             <h3>Skills</h3>
             <div class="skill-grid">
                 <div class="skill-category">
@@ -248,21 +227,20 @@
             </div>
         </div>
     </section>
-
     <section id="contact">
         <div class="section-content-box">
-            <h2 class="text-center">Contact</h2> 
+            <h2>Contact</h2>
             <p class="text-content">
                 ติดต่อตามช่องทางด้านล่างเลย อิอิ
             </p>
-            <div class="text-center">
+            <div>
                 <a href="mailto:kanticha2549za@gmail.com" class="contact-link">
                     <i class="fas fa-envelope"></i> E-mail
                 </a>
                 <a href="tel:0909136700" class="contact-link">
                     <i class="fa-solid fa-phone"></i> Phone
                 </a>
-                <a href="https://www.instagram.com/anww2006._?igsh=c3dhcndudzVsZHEy" target="_blank" class="contact-link"> 
+                <a href="https://www.instagram.com/anww2006._?igsh=c3dhcndudzVsZHEy" target="_blank" class="contact-link">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
                 <a href="https://www.facebook.com/share/1ZxnF7E6hi/" target="_blank" class="contact-link">
@@ -272,4 +250,5 @@
         </div>
     </section>
 </body>
-</html> 
+</html>
+</html>

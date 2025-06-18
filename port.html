@@ -4,56 +4,164 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Aum eiei</title> 
-    <!-- เพิ่ม Font Awesome CDN สำหรับไอคอน -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            padding-top: 50px; /* เว้นพื้นที่ด้านบนสำหรับ navigation bar ที่ตรึงอยู่ */
-            background-color: #aad6e7; /* สีพื้นหลังหลัก */
-            color: #ffc813;
-        }
-        nav {
-            position: fixed; /* ตรึง navigation bar ที่ด้านบน */
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333; /* สีพื้นหลังของ navigation bar */
-            color: white;
-            padding: 10px 20px; 
-            text-align: right;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            display: flex;
-            justify-content: space-between; /* จัด Home link ไปทางซ้าย */
-            align-items: center;
-            z-index: 100; /* ให้ nav bar อยู่ด้านบนสุด */
-        }
-        nav a {
-            color: white; /* สีของลิงก์ใน navigation bar */
-            text-decoration: none;
-            padding: 5px 10px; 
-            margin-left: 15px; 
-            border-radius: 3px; 
-            transition: background-color 0.3s ease-in-out; /* การเปลี่ยนสีพื้นหลังอย่างนุ่มนวลเมื่อโฮเวอร์ */
-        }
-        nav a:hover {
-            background-color: #555; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
-        }
-        section {
-            /* ทำให้แต่ละส่วนเป็นเหมือน "หน้า" เต็มจอ */
-            min-height: calc(100vh - 50px); /* ความสูงขั้นต่ำเท่ากับ viewport ลบความสูงของ nav bar */
-            display: flex; /* ใช้ flexbox เพื่อจัดเนื้อหาให้กึ่งกลางแนวตั้ง */
-            flex-direction: column;
-            justify-content: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวตั้ง */
-            align-items: center; /* จัดเนื้อหาให้อยู่กึ่งกลางแนวนอน (ภายใน section) */
-            padding: 40px 20px; /* เพิ่ม padding */
-            box-sizing: border-box; /* รวม padding ในความสูง/กว้าง */
-            transition: background-color 0.5s ease-in-out; /* เพิ่ม transition สำหรับสีพื้นหลัง section */
-            text-align: center; /* จัดข้อความกึ่งกลางสำหรับ section โดยรวม */
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* กำหนดสีพื้นหลังเฉพาะสำหรับแต่ละ section */
+        body {
+            font-family: 'Arial', sans-serif;
+            padding-top: 70px;
+            background-color: #aad6e7;
+            color: #ffc813;
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 0 2rem;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1f1f1f 100%);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Logo/Brand */
+        .nav-brand {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
+            background: linear-gradient(45deg, #ffc813, #ffed4a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-brand::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, #ffc813, #ffed4a);
+            transition: width 0.3s ease;
+        }
+
+        .nav-brand:hover::after {
+            width: 100%;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            color: #ffc813;
+            background: rgba(255, 200, 19, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 200, 19, 0.2);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(45deg, #ffc813, #ffed4a);
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Rest of the existing styles remain the same */
+        section {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            transition: background-color 0.5s ease-in-out;
+            text-align: center;
+        }
+
         #about {
             background-color: #e9ac28da; 
         }
@@ -64,35 +172,30 @@
             background-color: #fabc11ef; 
         }
 
-        /* กล่องเนื้อหาหลักภายในแต่ละ section */
         .section-content-box {
             background-color: rgba(63, 56, 56, 0.87);
             border-radius: 8px;
-            max-width: 800px; /* กำหนดความกว้างสูงสุดของเนื้อหา */
-            width: 100%; /* ให้ content box ใช้ความกว้างเต็มที่ของ max-width */
+            max-width: 800px;
+            width: 100%;
             padding: 40px;
             box-sizing: border-box;
-            /* ลบบรรทัด transition: transform 0.3s ease-in-out; ออก */
-        }
-        .section-content-box:hover {
-            /* ลบบรรทัด transform: translateY(-5px); ออก */ 
         }
 
         h2 {
-            color: #ffe44e; /* สีเหลืองสำหรับหัวข้อหลัก */
-            border-bottom: 2px solid #f7e75f;  /* เส้นใต้สีเหลือง */
+            color: #ffe44e;
+            border-bottom: 2px solid #f7e75f;
             padding-bottom: 5px;
             margin-bottom: 20px;
         }
         h3 {
             color: #fdce4c;
-            text-align: left; /* จัดหัวข้อย่อยชิดซ้าย */ 
-            margin-top: 25px; /* เพิ่มระยะห่างด้านบน */
+            text-align: left;
+            margin-top: 25px;
         }
         ul {
             list-style: disc;
             margin-left: 20px;
-            text-align: left; /* จัดรายการลิสต์ชิดซ้าย */
+            text-align: left;
         }
         li {
             margin-bottom: 5px;
@@ -106,66 +209,86 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            border: 3px solid #fad21f; /* เพิ่มกรอบสีฟ้า */
+            border: 3px solid #fad21f;
         }
         .contact-link {
-            display: inline-flex; /* ใช้ flex เพื่อจัดเรียงไอคอนและข้อความในแนวนอน */
-            align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+            display: inline-flex;
+            align-items: center;
             padding: 8px 15px;
             margin: 5px;
             background-color: #fdc731;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            /* ลบบรรทัด transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; ออก */
         }
         .contact-link i {
-            margin-right: 8px; /* ระยะห่างระหว่างไอคอนและข้อความ */
+            margin-right: 8px;
         }
         .contact-link:hover {
-            background-color: #ffe925; /* สีพื้นหลังเข้มขึ้นเมื่อโฮเวอร์ */
-            /* ลบบรรทัด transform: translateY(-3px); ออก */ 
+            background-color: #ffe925;
         }
         .text-content {
             text-align: center;
-            margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างสำหรับข้อความทั่วไป */
+            margin-bottom: 20px;
         }
         .experience-item, .skill-category {
-            background-color: #f9f9f9; /* สีพื้นหลังอ่อนกว่าสำหรับแต่ละรายการ */
+            background-color: #f9f9f9;
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 15px;
-            text-align: left; /* จัดเนื้อหาใน item ชิดซ้าย */
+            text-align: left;
         }
         .experience-item h4 {
             color: #1115ff;
             margin-bottom: 5px;
         }
-
-        /* เพิ่มสไตล์สำหรับเนื้อหาใน experience-item */
         .experience-item p,
         .experience-item ul li {
-            color: #050505; /* เปลี่ยนสีข้อความในประสบการณ์เป็นสีเทาอ่อนลง */
+            color: #050505;
         }
-
-        /* เพิ่มสไตล์สำหรับเนื้อหาใน skill-category */
         .skill-category ul li {
-            color: #666; /* เปลี่ยนสีข้อความในทักษะเป็นสีเทาอ่อนลง */
+            color: #666;
         }
         .skill-category h4 {
             color: #001aff;
             margin-bottom: 10px;
         }
 
-        /* Responsive adjustments */
+        /* Responsive Design */
         @media (max-width: 768px) {
             nav {
-                justify-content: center;
-                flex-wrap: wrap;
+                padding: 0 1rem;
             }
-            nav a {
-                margin: 5px 10px;
+
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                gap: 1rem;
+                transition: left 0.3s ease;
             }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .nav-link {
+                padding: 1rem 2rem;
+                width: 200px;
+                text-align: center;
+            }
+
             section {
                 padding: 20px 10px;
             }
@@ -176,12 +299,17 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index-simple.html">Home</a> 
-        <div>
-            <a href="#about">About me</a>
-            <a href="#experience-skills">Experience-skills</a>
-            <a href="#contact">Contact</a>
+    <nav id="navbar">
+        <a href="index-simple.html" class="nav-brand">🌟 Aum Portfolio</a>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#about" class="nav-link" onclick="setActiveLink(this)">About me</a></li>
+            <li><a href="#experience-skills" class="nav-link" onclick="setActiveLink(this)">Experience & Skills</a></li>
+            <li><a href="#contact" class="nav-link" onclick="setActiveLink(this)">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
@@ -192,8 +320,10 @@
             <h1 class="text-center">Kanticha Yongcha</h1>
             <p class="text-center">นางสาวกันติชา ย๋องชา</p>
             <p class="text-content">
-                นี่คือคำอธิบายสั้นๆ เกี่ยวกับตัวคุณและสิ่งที่คุณทำ.
-                เน้นถึงความสามารถหลักและเป้าหมายในอาชีพของคุณ.
+                ชื่อเล่นว่าอุ๋ม เกิดวันที่ 08/02/2549 อายุ19ปี 
+            </p>
+            <p class="text-content">
+                ปัจจุบันศึกษาอยู่คณะครุศาสตร์อุตสาหกรรมเเละเทคโนโลยี สาขาเทคโนโลยีคอมพิวเตอร์ 
             </p>
         </div>
     </section>
@@ -271,32 +401,63 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuBtn.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Active link highlighting
+        function setActiveLink(clickedLink) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            clickedLink.classList.add('active');
+        }
+
+        // Auto-highlight active section on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
-</html> 
-
-
-
-<!-- /* การทำให้แต่ละส่วน (Section) แสดงผลเหมือน "หน้า" ที่อยู่ติดกัน:
-ในโค้ด CSS ส่วน section จะมีคุณสมบัติ min-height: calc(100vh - 50px); นี่คือส่วนสำคัญที่ทำให้แต่ละ <section> มีความสูงอย่างน้อยเท่ากับความสูงของหน้าจอทั้งหมด (หักลบความสูงของแถบนำทาง 50px) ทำให้ดูเหมือนเป็นหน้ากระดาษเต็มจอแยกกัน.
-นอกจากนี้ display: flex; justify-content: center; align-items: center; ยังช่วยจัดเนื้อหาภายในแต่ละ section ให้อยู่กึ่งกลางทั้งแนวตั้งและแนวนอน ทำให้ดูเป็นระเบียบ.
-ส่วน background-color ที่แตกต่างกันใน #about, #experience-skills, #contact ก็ช่วยให้เห็นความแตกต่างของแต่ละ "หน้า" ชัดเจนขึ้นเมื่อเลื่อนลงมาครับ.
-การเชื่อมโยงจากแท็บ (ลิงก์ในแถบนำทาง) ไปยังหน้านั้นๆ:
-ในโค้ด HTML ของแถบนำทาง (<nav>) จะมีลิงก์อยู่ เช่น:
-HTML
-<a href="#about">About me</a>
-<a href="#experience-skills">Experience-skills</a>
-<a href="#contact">Contact</a>
-คุณสมบัติ href ที่เริ่มต้นด้วยเครื่องหมาย # (เช่น #about) คือ Anchor Link (ลิงก์ยึดโยง) เมื่อคุณคลิกลิงก์เหล่านี้ เบราว์เซอร์จะเลื่อนหน้าเว็บไปยังองค์ประกอบ (<section>) ที่มี id ตรงกันโดยอัตโนมัติครับ
-ตัวอย่างเช่น:
-เมื่อคลิก About me (ซึ่งมี href="#about") เบราว์เซอร์จะเลื่อนไปที่ <section id="about">
-เมื่อคลิก Experience-skills (ซึ่งมี href="#experience-skills") เบราว์เซอร์จะเลื่อนไปที่ <section id="experience-skills">
-และเมื่อคลิก Contact (ซึ่งมี href="#contact") เบราว์เซอร์จะเลื่อนไปที่ <section id="contact">
-การทำงานร่วมกันของ CSS ที่กำหนดความสูงของ section ให้เต็มจอ และการใช้ Anchor Link ในแถบนำทาง ทำให้เกิดประสบการณ์การใช้งานเหมือนกับว่าคุณกำลังเปลี่ยนหน้าไปมา แม้ว่าจะเป็นไฟล์ HTML เพียงหน้าเดียวก็ตามครับ*/
- -->
-
-
-
-
-
-
-
+</html>
