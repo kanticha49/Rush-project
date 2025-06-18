@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> /* กำหนดการเข้ารหัสตัวอักษร */
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> /* กำหนดการแสดงผลบนอุปกรณ์มือถือ */
-    <title>Aum eiei</title> /
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Aum eiei</title> 
     <!-- เพิ่ม Font Awesome CDN สำหรับไอคอน -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -72,10 +72,11 @@
             width: 100%; /* ให้ content box ใช้ความกว้างเต็มที่ของ max-width */
             padding: 40px;
             box-sizing: border-box;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transition for section content box hover */
+            /* ลบบรรทัด transition: transform 0.3s ease-in-out; ออก */
         }
         .section-content-box:hover {
-            transform: translateY(-5px); /* ขยับขึ้นเล็กน้อยเมื่อโฮเวอร์ */
+            /* ลบบรรทัด transform: translateY(-5px); ออก */ 
+        }
 
         h2 {
             color: #ffe44e; /* สีเหลืองสำหรับหัวข้อหลัก */
@@ -116,14 +117,14 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for contact links */
+            /* ลบบรรทัด transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; ออก */
         }
         .contact-link i {
             margin-right: 8px; /* ระยะห่างระหว่างไอคอนและข้อความ */
         }
         .contact-link:hover {
             background-color: #ffe925; /* สีพื้นหลังเข้มขึ้นเมื่อโฮเวอร์ */
-            transform: translateY(-3px); /* ขยับลิงก์ขึ้นเล็กน้อยเมื่อโฮเวอร์ */
+            /* ลบบรรทัด transform: translateY(-3px); ออก */ 
         }
         .text-content {
             text-align: center;
@@ -141,13 +142,13 @@
             margin-bottom: 5px;
         }
 
-         /* เพิ่มสไตล์สำหรับเนื้อหาใน experience-item */
+        /* เพิ่มสไตล์สำหรับเนื้อหาใน experience-item */
         .experience-item p,
         .experience-item ul li {
             color: #050505; /* เปลี่ยนสีข้อความในประสบการณ์เป็นสีเทาอ่อนลง */
         }
 
-     /* เพิ่มสไตล์สำหรับเนื้อหาใน skill-category */
+        /* เพิ่มสไตล์สำหรับเนื้อหาใน skill-category */
         .skill-category ul li {
             color: #666; /* เปลี่ยนสีข้อความในทักษะเป็นสีเทาอ่อนลง */
         }
@@ -176,7 +177,7 @@
 </head>
 <body>
     <nav>
-        <a href="index-simple.html">Home</a>  /* ลิงก์ไปยังหน้าแรก */
+        <a href="index-simple.html">Home</a> 
         <div>
             <a href="#about">About me</a>
             <a href="#experience-skills">Experience-skills</a>
@@ -212,6 +213,14 @@
                         <li>ความรับผิดชอบและผลงานที่ 3</li>
                     </ul>
                 </div>
+                <div class="experience-item">
+                    <h4>ตำแหน่งงาน 2 ที่บริษัท B</h4>
+                    <p>เดือน ปี - เดือน ปี</p>
+                    <ul>
+                        <li>ความรับผิดชอบและผลงานที่ 1</li>
+                        <li>ความรับผิดชอบและผลงานที่ 2</li>
+                    </ul>
+                </div>
             </div>
 
             <h3>Skills</h3>
@@ -230,13 +239,19 @@
                         <li>CI/CD, Jira</li>
                     </ul>
                 </div>
+                <div class="skill-category">
+                    <h4>ภาษา</h4>
+                    <ul>
+                        <li>ไทย, อังกฤษ</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
         <div class="section-content-box">
-            <h2 class="text-center">Contact</h2>
+            <h2 class="text-center">Contact</h2> 
             <p class="text-content">
                 ติดต่อตามช่องทางด้านล่างเลย อิอิ
             </p>
@@ -247,7 +262,7 @@
                 <a href="tel:0909136700" class="contact-link">
                     <i class="fa-solid fa-phone"></i> Phone
                 </a>
-                <a href="https://www.instagram.com/anww2006._?igsh=c3dhcndudzVsZHEy" target="_blank" class="contact-link">
+                <a href="https://www.instagram.com/anww2006._?igsh=c3dhcndudzVsZHEy" target="_blank" class="contact-link"> 
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
                 <a href="https://www.facebook.com/share/1ZxnF7E6hi/" target="_blank" class="contact-link">
@@ -257,4 +272,31 @@
         </div>
     </section>
 </body>
-</html>
+</html> 
+
+
+
+<!-- /* การทำให้แต่ละส่วน (Section) แสดงผลเหมือน "หน้า" ที่อยู่ติดกัน:
+ในโค้ด CSS ส่วน section จะมีคุณสมบัติ min-height: calc(100vh - 50px); นี่คือส่วนสำคัญที่ทำให้แต่ละ <section> มีความสูงอย่างน้อยเท่ากับความสูงของหน้าจอทั้งหมด (หักลบความสูงของแถบนำทาง 50px) ทำให้ดูเหมือนเป็นหน้ากระดาษเต็มจอแยกกัน.
+นอกจากนี้ display: flex; justify-content: center; align-items: center; ยังช่วยจัดเนื้อหาภายในแต่ละ section ให้อยู่กึ่งกลางทั้งแนวตั้งและแนวนอน ทำให้ดูเป็นระเบียบ.
+ส่วน background-color ที่แตกต่างกันใน #about, #experience-skills, #contact ก็ช่วยให้เห็นความแตกต่างของแต่ละ "หน้า" ชัดเจนขึ้นเมื่อเลื่อนลงมาครับ.
+การเชื่อมโยงจากแท็บ (ลิงก์ในแถบนำทาง) ไปยังหน้านั้นๆ:
+ในโค้ด HTML ของแถบนำทาง (<nav>) จะมีลิงก์อยู่ เช่น:
+HTML
+<a href="#about">About me</a>
+<a href="#experience-skills">Experience-skills</a>
+<a href="#contact">Contact</a>
+คุณสมบัติ href ที่เริ่มต้นด้วยเครื่องหมาย # (เช่น #about) คือ Anchor Link (ลิงก์ยึดโยง) เมื่อคุณคลิกลิงก์เหล่านี้ เบราว์เซอร์จะเลื่อนหน้าเว็บไปยังองค์ประกอบ (<section>) ที่มี id ตรงกันโดยอัตโนมัติครับ
+ตัวอย่างเช่น:
+เมื่อคลิก About me (ซึ่งมี href="#about") เบราว์เซอร์จะเลื่อนไปที่ <section id="about">
+เมื่อคลิก Experience-skills (ซึ่งมี href="#experience-skills") เบราว์เซอร์จะเลื่อนไปที่ <section id="experience-skills">
+และเมื่อคลิก Contact (ซึ่งมี href="#contact") เบราว์เซอร์จะเลื่อนไปที่ <section id="contact">
+การทำงานร่วมกันของ CSS ที่กำหนดความสูงของ section ให้เต็มจอ และการใช้ Anchor Link ในแถบนำทาง ทำให้เกิดประสบการณ์การใช้งานเหมือนกับว่าคุณกำลังเปลี่ยนหน้าไปมา แม้ว่าจะเป็นไฟล์ HTML เพียงหน้าเดียวก็ตามครับ*/
+ -->
+
+
+
+
+
+
+

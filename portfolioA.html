@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding-top: 50px; /* เว้นพื้นที่ด้านบนสำหรับ navigation bar ที่ตรึงอยู่ */
-            background-color: #f8cc08; /* สีพื้นหลังหลัก */
+            background-color: #aad6e7; /* สีพื้นหลังหลัก */
             color: #ffc813;
         }
         nav {
@@ -68,16 +68,14 @@
         .section-content-box {
             background-color: rgba(63, 56, 56, 0.87);
             border-radius: 8px;
-            /* ลบบรรทัด box-shadow ออกจากที่นี่ */
             max-width: 800px; /* กำหนดความกว้างสูงสุดของเนื้อหา */
             width: 100%; /* ให้ content box ใช้ความกว้างเต็มที่ของ max-width */
             padding: 40px;
             box-sizing: border-box;
-            transition: transform 0.3s ease-in-out; /* Smooth transition for section content box hover, ลบ box-shadow ออกจาก transition */
+            /* ลบบรรทัด transition: transform 0.3s ease-in-out; ออก */
         }
         .section-content-box:hover {
-            transform: translateY(-5px); /* ขยับขึ้นเล็กน้อยเมื่อโฮเวอร์ */
-            /* ลบบรรทัด box-shadow ออก */ 
+            /* ลบบรรทัด transform: translateY(-5px); ออก */ 
         }
 
         h2 {
@@ -119,14 +117,14 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for contact links */
+            /* ลบบรรทัด transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; ออก */
         }
         .contact-link i {
             margin-right: 8px; /* ระยะห่างระหว่างไอคอนและข้อความ */
         }
         .contact-link:hover {
             background-color: #ffe925; /* สีพื้นหลังเข้มขึ้นเมื่อโฮเวอร์ */
-            transform: translateY(-3px); /* ขยับลิงก์ขึ้นเล็กน้อยเมื่อโฮเวอร์ */
+            /* ลบบรรทัด transform: translateY(-3px); ออก */ 
         }
         .text-content {
             text-align: center;
@@ -137,7 +135,6 @@
             padding: 15px;
             border-radius: 5px;
             margin-bottom: 15px;
-            /* ลบบรรทัด box-shadow ออกจากที่นี่ */
             text-align: left; /* จัดเนื้อหาใน item ชิดซ้าย */
         }
         .experience-item h4 {
@@ -180,7 +177,7 @@
 </head>
 <body>
     <nav>
-        <a href="index-simple.html">Home</a>  
+        <a href="index-simple.html">Home</a> 
         <div>
             <a href="#about">About me</a>
             <a href="#experience-skills">Experience-skills</a>
@@ -254,7 +251,7 @@
 
     <section id="contact">
         <div class="section-content-box">
-            <h2 class="text-center">Contact</h2>
+            <h2 class="text-center">Contact</h2> 
             <p class="text-content">
                 ติดต่อตามช่องทางด้านล่างเลย อิอิ
             </p>
@@ -265,7 +262,7 @@
                 <a href="tel:0909136700" class="contact-link">
                     <i class="fa-solid fa-phone"></i> Phone
                 </a>
-                <a href="https://www.instagram.com/anww2006._?igsh=c3dhcndudzVsZHEy" target="_blank" class="contact-link">
+                <a href="https://www.instagram.com/anww2006._?igsh=c3dhcndudzVsZHEy" target="_blank" class="contact-link"> 
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
                 <a href="https://www.facebook.com/share/1ZxnF7E6hi/" target="_blank" class="contact-link">
@@ -275,4 +272,4 @@
         </div>
     </section>
 </body>
-</html>
+</html> 
