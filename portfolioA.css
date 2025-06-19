@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     color: #ffc813;
-    padding-top: 60px; 
+    padding-top: 60px;
 }
 nav {
     position: fixed;
-     top: 0;
+    top: 0;
     left: 0;
     width: 100vw;
     z-index: 100;
@@ -40,7 +40,7 @@ section {
 #about {
     background-color: #e9ac28da;
 }
-#experience-skills {
+#experience {
     background-color: #f7c41e;
 }
 #contact {
@@ -104,7 +104,6 @@ li {
     text-align: center;
     margin-bottom: 20px;
 }
-
 .experience-item h4 {
     color: #1115ff;
     margin-bottom: 5px;
@@ -113,7 +112,6 @@ li {
 .experience-item ul li {
     color: #050505;
 }
-
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -132,8 +130,5 @@ li {
         padding: 5vw 2vw;
         max-width: 100%;
         width: 100%;
-    }
-    .skill-grid {
-        flex-direction: column;
     }
 }
