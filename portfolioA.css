@@ -1,10 +1,15 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background-color: #aad6e7;
     color: #ffc813;
+    padding-top: 60px; 
 }
 nav {
+    position: fixed;
+     top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +35,6 @@ section {
     align-items: center;
     padding: 40px 20px;
     box-sizing: border-box;
-    transition: background-color 0.5s ease-in-out;
     text-align: center;
 }
 #about {
@@ -86,7 +90,7 @@ li {
     padding: 8px 15px;
     margin: 5px;
     background-color: #fdc731;
-    color: white;
+    color: rgb(95, 69, 44);
     text-decoration: none;
     border-radius: 5px;
 }
@@ -128,19 +132,18 @@ li {
     gap: 16px;
 }
 @media (max-width: 768px) {
-    /* CSS ที่จะทำงานเมื่อหน้าจอมีความกว้างไม่เกิน 768px */
     nav {
-        flex-direction: column; /* เปลี่ยน Navbar เป็นแนวตั้ง */
+        flex-direction: column;
         align-items: flex-start;
     }
     nav .nav-links {
         justify-content: center;
-        flex-wrap: wrap; /* ทำให้ลิงก์ห่อลงมาได้ */
+        flex-wrap: wrap;
         gap: 12px;
     }
     section {
-        padding: 10vw 2vw; /* ปรับ padding ให้สัมพันธ์กับหน้าจอ */
-        min-height: unset; /* ยกเลิก min-height เดิม */
+        padding: 10vw 2vw;
+        min-height: unset;
     }
     .section-content-box {
         padding: 5vw 2vw;
@@ -148,6 +151,6 @@ li {
         width: 100%;
     }
     .skill-grid {
-        flex-direction: column; /* เปลี่ยน Skills เป็นแนวตั้ง */
+        flex-direction: column;
     }
 }
