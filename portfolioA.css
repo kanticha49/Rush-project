@@ -104,13 +104,7 @@ li {
     text-align: center;
     margin-bottom: 20px;
 }
-.experience-item, .skill-category {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    text-align: left;
-}
+
 .experience-item h4 {
     color: #1115ff;
     margin-bottom: 5px;
@@ -119,18 +113,7 @@ li {
 .experience-item ul li {
     color: #050505;
 }
-.skill-category ul li {
-    color: #666;
-}
-.skill-category h4 {
-    color: #001aff;
-    margin-bottom: 10px;
-}
-.skill-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
