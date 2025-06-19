@@ -5,158 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Aum eiei</title> 
     <!-- Font Awesome CDN for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #aad6e7;
-            color: #ffc813;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #222;
-            padding: 16px;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin: 0 10px;
-        }
-        nav .nav-links {
-            display: flex;
-            gap: 24px;
-        }
-        section {
-            min-height: calc(100vh - 50px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            box-sizing: border-box;
-            transition: background-color 0.5s ease-in-out;
-            text-align: center;
-        }
-        #about {
-            background-color: #e9ac28da;
-        }
-        #experience-skills {
-            background-color: #f7c41e;
-        }
-        #contact {
-            background-color: #fabc11ef;
-        }
-        .section-content-box {
-            background-color: rgba(63, 56, 56, 0.87);
-            border-radius: 8px;
-            max-width: 800px;
-            width: 100%;
-            padding: 40px;
-            box-sizing: border-box;
-        }
-        h2 {
-            color: #ffe44e;
-            border-bottom: 2px solid #f7e75f;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-        }
-        h3 {
-            color: #fdce4c;
-            text-align: left;
-            margin-top: 25px;
-        }
-        ul {
-            list-style: disc;
-            margin-left: 20px;
-            text-align: left;
-        }
-        li {
-            margin-bottom: 5px;
-        }
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            border: 3px solid #fad21f;
-        }
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 15px;
-            margin: 5px;
-            background-color: #fdc731;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .contact-link i {
-            margin-right: 8px;
-        }
-        .contact-link:hover {
-            background-color: #ffe925;
-        }
-        .text-content {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .experience-item, .skill-category {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .experience-item h4 {
-            color: #1115ff;
-            margin-bottom: 5px;
-        }
-        .experience-item p,
-        .experience-item ul li {
-            color: #050505;
-        }
-        .skill-category ul li {
-            color: #666;
-        }
-        .skill-category h4 {
-            color: #001aff;
-            margin-bottom: 10px;
-        }
-        .skill-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            nav .nav-links {
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 12px;
-            }
-            section {
-                padding: 20px 10px;
-            }
-            .section-content-box {
-                padding: 20px;
-            }
-            .skill-grid {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="stylesheet" href="portfolioA.css">
 </head>
 <body>
     <nav>
@@ -170,7 +20,7 @@
     <section id="about">
         <div class="section-content-box">
             <h2>About me</h2>
-            <img src="MEITU-20250618-152920866.jpg" alt="Profile photo" class="profile-photo">
+            <img src="https://ibb.co/rfXT9R1R" alt="Profile photo" class="profile-photo">
             <h1>Kanticha Yongcha</h1>
             <p>นางสาวกันติชา ย๋องชา</p>
             <p class="text-content">
@@ -185,20 +35,15 @@
             <h3>Experience</h3>
             <div class="experience-list">
                 <div class="experience-item">
-                    <h4>ตำแหน่งงาน 1 ที่บริษัท A</h4>
-                    <p>เดือน ปี - เดือน ปี</p>
+                    <h4>การเข้าร่วมการเเข่งขัน</h4>
+                    <p>ภายในปี2565-2567</p>
                     <ul>
-                        <li>ความรับผิดชอบและผลงานที่ 1</li>
-                        <li>ความรับผิดชอบและผลงานที่ 2</li>
-                        <li>ความรับผิดชอบและผลงานที่ 3</li>
-                    </ul>
-                </div>
-                <div class="experience-item">
-                    <h4>ตำแหน่งงาน 2 ที่บริษัท B</h4>
-                    <p>เดือน ปี - เดือน ปี</p>
-                    <ul>
-                        <li>ความรับผิดชอบและผลงานที่ 1</li>
-                        <li>ความรับผิดชอบและผลงานที่ 2</li>
+                        <li>การเเข่งขัน INTERNATIONAL ARDUINO COMPETITION BCG INNOVATION WITH ARDUINO EXPLORE IOT KIT 
+                            ณ วันที่13-16 กรกฎาคม 2566</li>
+                        <li>ROBOTIC COMPETITION  FOR STUDENTS การแข่งขันสร้างหุ่นยนต์
+                            สำหรับนักเรียน ประจำปี 2022ณ วันที่ 17 มิถุนายน 2567</li>
+                        <li>เข้าร่วมการเเข่งขันพัฒนาโปรแกรมคอมพิวเตอร์เเห่งประเทศไทย
+                            ครั้งที่25 (NSC2023) ระดับภูมิภาค ภาคใต้ณ วันที่ 31 มีนาคม 2566</li>
                     </ul>
                 </div>
             </div>
@@ -207,23 +52,16 @@
                 <div class="skill-category">
                     <h4>ภาษาโปรแกรมมิ่ง</h4>
                     <ul>
-                        <li>JavaScript, Python</li>
-                        <li>Java, TypeScript</li>
+                        <li>Python</li>
+                        <li>C,C#</li>
                     </ul>
                 </div>
                 <div class="skill-category">
                     <h4>เครื่องมือ</h4>
                     <ul>
-                        <li>Git, Docker</li>
-                        <li>CI/CD, Jira</li>
+                        <li>Git, GitHab</li>
+                        <li>Canva</li>
                     </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>ภาษา</h4>
-                    <ul>
-                        <li>ไทย, อังกฤษ</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -250,5 +88,4 @@
         </div>
     </section>
 </body>
-</html>
 </html>
